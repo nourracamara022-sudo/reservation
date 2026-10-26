@@ -70,9 +70,16 @@ $demandes = $requete->fetchAll(PDO::FETCH_ASSOC);
         </td>
 
         <td>
-            <a href="Modifier.php?id=<?= (int) $demande["id"] ?>">
-                Modifier
-            </a>
+            
+<a href="Modifier.php?id=<?= (int) $demande["id"] ?>">
+    Modifier
+</a>
+
+<form action="Supprimer.php" method="POST" style="display:inline;">
+    <input type="hidden" name="id" value="<?= (int) $demande["id"] ?>">
+    <button type="submit">Supprimer</button>
+</form>
+
         </td>
     </tr>
 <?php } ?>
